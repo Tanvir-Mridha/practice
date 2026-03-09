@@ -59,7 +59,7 @@ class MyApp extends StatelessWidget {
           ),
           debugShowCheckedModeBanner: false,
           title: 'PracticeApp',
-          home: Module12Class3(),
+          home: Alert(),
         );
 
       },
