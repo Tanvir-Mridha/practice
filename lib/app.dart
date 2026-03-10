@@ -7,7 +7,10 @@ import 'package:practice/module_10/class_2.dart';
 import 'package:practice/module_10/class_3.dart';
 import 'package:practice/module_11/class_1.dart';
 import 'package:practice/module_11/class_3.dart';
+import 'package:practice/module_12/class_2.dart';
 import 'package:practice/module_12/class_3.dart';
+import 'package:practice/module_12/nav/page_2.dart';
+import 'package:practice/module_12/nav/page_3.dart';
 
 import 'module_11/class_1_grid.dart';
 import 'module_11/class_2.dart';
@@ -25,6 +28,18 @@ class MyApp extends StatelessWidget {
       // Use builder only if you need to use library outside ScreenUtilInit context
       builder: (_ , child) {
         return MaterialApp(
+          routes: {
+            '/': (context)=> Module10Class3(),
+            '/class1': (context)=> Module11Class1(),
+            '/class2': (context)=> Module11Class2(),
+            '/class3': (context)=> Alert(),
+            '/page1': (context)=> Page1(),
+            '/page2': (context)=> Page2(),
+            '/page3': (context)=> Page3(),
+            '/Module12Class2' : (context)=> Module12Class2(),
+          },
+          initialRoute: '/Module12Class2',
+
           theme: ThemeData(
             brightness: Brightness.light,
             primaryColor: Colors.deepPurple,
@@ -59,7 +74,7 @@ class MyApp extends StatelessWidget {
           ),
           debugShowCheckedModeBanner: false,
           title: 'PracticeApp',
-          home: Alert(),
+          //home: Page1(),
         );
 
       },
