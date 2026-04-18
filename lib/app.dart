@@ -11,6 +11,9 @@ import 'package:practice/module_12/class_2.dart';
 import 'package:practice/module_12/class_3.dart';
 import 'package:practice/module_12/nav/page_2.dart';
 import 'package:practice/module_12/nav/page_3.dart';
+import 'package:practice/module_13/class3.dart';
+import 'package:practice/module_13/class_1.dart';
+import 'package:practice/module_13/class_2.dart';
 
 import 'module_11/class_1_grid.dart';
 import 'module_11/class_2.dart';
@@ -37,8 +40,12 @@ class MyApp extends StatelessWidget {
             '/page2': (context)=> Page2(),
             '/page3': (context)=> Page3(),
             '/Module12Class2' : (context)=> Module12Class2(),
+            '/Module12Class3': (context)=> Module12Class3(),
+            '/Module13Class1': (context)=> Module13Class1(),
+            '/Module13Class2': (context)=> Module13Class2(),
+            '/Module13Class3': (context)=> BottomNav(),
           },
-          initialRoute: '/Module12Class2',
+          initialRoute: '/Module13Class3',
 
           theme: ThemeData(
             brightness: Brightness.light,
