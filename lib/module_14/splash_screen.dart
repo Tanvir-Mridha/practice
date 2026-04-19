@@ -2,7 +2,9 @@ import'package:flutter/material.dart';
 import 'package:practice/module_14/responsive_ui.dart';
 
 import '../module_12/class_3.dart';
+import 'Class_2/shimmer_example.dart';
 import 'class_1.dart';
+import 'Class_2/MasonryGridView.dart';
 class SpalashScreen extends StatefulWidget {
   const SpalashScreen({super.key});
 
@@ -22,7 +24,7 @@ class _SpalashScreenState extends State<SpalashScreen> {
     Future.delayed( Duration(seconds: 5),(){
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => ResponsiveUi()),
+        MaterialPageRoute(builder: (context) => ShimmerExample()),
       );
     });
 

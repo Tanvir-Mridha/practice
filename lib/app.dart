@@ -1,3 +1,4 @@
+import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:practice/home.dart';
@@ -33,6 +34,9 @@ class MyApp extends StatelessWidget {
       // Use builder only if you need to use library outside ScreenUtilInit context
       builder: (_ , child) {
         return MaterialApp(
+          useInheritedMediaQuery: true,
+          locale: DevicePreview.locale(context),
+          builder: DevicePreview.appBuilder,
           // routes: {
           //   '/': (context)=> Module10Class3(),
           //   '/class1': (context)=> Module11Class1(),
@@ -50,6 +54,7 @@ class MyApp extends StatelessWidget {
           //   '/SpalashScreen': (context)=> SpalashScreen (),
           // },
           // initialRoute: '/SpalashScreen',
+
           home: SpalashScreen(),
 
           theme: ThemeData(
