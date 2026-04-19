@@ -18,6 +18,8 @@ import 'package:practice/module_13/class_2.dart';
 import 'module_11/class_1_grid.dart';
 import 'module_11/class_2.dart';
 import 'module_12/nav/page_1.dart';
+import 'module_14/class_1.dart';
+import 'module_14/splash_screen.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -31,21 +33,24 @@ class MyApp extends StatelessWidget {
       // Use builder only if you need to use library outside ScreenUtilInit context
       builder: (_ , child) {
         return MaterialApp(
-          routes: {
-            '/': (context)=> Module10Class3(),
-            '/class1': (context)=> Module11Class1(),
-            '/class2': (context)=> Module11Class2(),
-            '/class3': (context)=> Alert(),
-            '/page1': (context)=> Page1(),
-            '/page2': (context)=> Page2(),
-            '/page3': (context)=> Page3(),
-            '/Module12Class2' : (context)=> Module12Class2(),
-            '/Module12Class3': (context)=> Module12Class3(),
-            '/Module13Class1': (context)=> Module13Class1(),
-            '/Module13Class2': (context)=> Module13Class2(),
-            '/Module13Class3': (context)=> BottomNav(),
-          },
-          initialRoute: '/Module13Class3',
+          // routes: {
+          //   '/': (context)=> Module10Class3(),
+          //   '/class1': (context)=> Module11Class1(),
+          //   '/class2': (context)=> Module11Class2(),
+          //   '/class3': (context)=> Alert(),
+          //   '/page1': (context)=> Page1(),
+          //   '/page2': (context)=> Page2(),
+          //   '/page3': (context)=> Page3(),
+          //   '/Module12Class2' : (context)=> Module12Class2(),
+          //   '/Module12Class3': (context)=> Module12Class3(),
+          //   '/Module13Class1': (context)=> Module13Class1(),
+          //   '/Module13Class2': (context)=> Module13Class2(),
+          //   '/Module13Class3': (context)=> BottomNav(),
+          //   '/Module14Class1': (context)=> module14class1 (),
+          //   '/SpalashScreen': (context)=> SpalashScreen (),
+          // },
+          // initialRoute: '/SpalashScreen',
+          home: SpalashScreen(),
 
           theme: ThemeData(
             brightness: Brightness.light,
