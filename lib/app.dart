@@ -21,6 +21,7 @@ import 'module_11/class_2.dart';
 import 'module_12/nav/page_1.dart';
 import 'module_14/class_1.dart';
 import 'module_14/splash_screen.dart';
+import 'module_16/ui/task_home_page.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -55,7 +56,7 @@ class MyApp extends StatelessWidget {
           // },
           // initialRoute: '/SpalashScreen',
 
-          home: SpalashScreen(),
+          home: TaskHomePage(),
 
           theme: ThemeData(
             brightness: Brightness.light,
