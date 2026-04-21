@@ -42,4 +42,21 @@ class TaskDatabase {
           (i) => Task.fromMap(maps[i]),
     );
   }
+  static Future<int> deleteTask(int id) async {
+    final db = await getDb();
+    return await db.delete(
+      'task',
+      where: 'id = ?',
+      whereArgs: [id],
+    );
+  }
+  static Future<int> updateTask(Task task) async {
+    final db = await getDb();
+    return await db.update(
+      'task',
+      task.toMap(),
+      where: 'id = ?',
+      whereArgs: [task.id]
+    );
+  }
 }
