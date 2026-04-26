@@ -15,6 +15,7 @@ import 'package:practice/module_12/nav/page_3.dart';
 import 'package:practice/module_13/class3.dart';
 import 'package:practice/module_13/class_1.dart';
 import 'package:practice/module_13/class_2.dart';
+import 'package:practice/module_17/screen/api_view.dart';
 
 import 'module_11/class_1_grid.dart';
 import 'module_11/class_2.dart';
@@ -56,7 +57,7 @@ class MyApp extends StatelessWidget {
           // },
           // initialRoute: '/SpalashScreen',
 
-          home: TaskHomePage(),
+          home: ApiView(),
 
           theme: ThemeData(
             brightness: Brightness.light,
