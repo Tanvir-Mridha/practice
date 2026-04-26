@@ -14,6 +14,38 @@ class ApiView extends StatefulWidget {
 
 class _ApiViewState extends State<ApiView> {
   List<postModel> post =[];
+  TextEditingController titleController = TextEditingController();
+  TextEditingController bodyController = TextEditingController();
+  void showAddPostDialog(){
+    showDialog(context: context, builder: (context){
+      return AlertDialog(
+        title: Text('Add text'),
+        content: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            TextField(
+              controller: titleController,
+              decoration: InputDecoration(
+                labelText: 'Title'
+              ),
+            ),
+            TextField(
+              controller: bodyController,
+              decoration: InputDecoration(
+                labelText: 'Text Body'
+              ),
+            )
+
+          ],
+        ),
+        actions: [
+          TextButton(onPressed: (){}, child: Text('Cancel')),
+          ElevatedButton(onPressed: (){addPost();}, child: Text('Add'))
+        ],
+      );
+
+    });
+  }
   Future<void>fetchPost() async {
     final response = await http.get(Uri.parse(Urls.getPost));
     log(response.toString());
@@ -52,6 +84,27 @@ class _ApiViewState extends State<ApiView> {
 
 
   }
+  Future<void>addPost() async {
+    final response =  await http.post(
+        Uri.parse(Urls.createPost),
+        body:json.encode({
+          'title':titleController.text,
+          'body': bodyController.text
+        }),
+    );
+    log(response.statusCode.toString());
+
+    if (response.statusCode == 201||response.statusCode == 200){
+      Navigator.pop(context);
+      final newPost =postModel.fromJson(json.decode(response.body));
+      setState(() {
+        post.insert(0,newPost);
+      });
+      await fetchPost();
+
+    }
+  }
+
   @override
   void initState() {
     // TODO: implement initState
@@ -82,6 +135,12 @@ class _ApiViewState extends State<ApiView> {
             ),
           );
           },
-      ) );
+      ),
+      floatingActionButton: FloatingActionButton(onPressed: (){
+        showAddPostDialog();
+      },
+      child: Icon(Icons.add),),
+    );
+
   }
 }
